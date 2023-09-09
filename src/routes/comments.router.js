@@ -5,7 +5,7 @@ import { prisma } from '../utils/prisma/index.js';
 
 const router = express.Router();
 
-
+// 수정
 //** 댓글생성  **//
 router.post(
   '/posts/:postId/comments',

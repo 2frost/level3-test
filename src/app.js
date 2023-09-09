@@ -11,7 +11,7 @@ import CommentsRouter from './routes/comments.router.js';
 
 
 const app = express();
-const PORT = 3017;
+const PORT = 3018;
 
 app.use(logMiddleware); // 최상단위치
 app.use(express.json());

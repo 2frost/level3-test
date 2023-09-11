@@ -17,7 +17,7 @@ if (tokenType !== 'Bearer') throw new Error(' 토큰 타입이 일치하지 않�
 
 // 3. 서버에서 발급한 **JWT가 맞는지 검증**합니다. → jwt의 비밀키 ‘ ‘
 
-const decodedToken = jwt.verify(token, 'customized_secret_key'); // jwt 사용하기위해 위에 import jsonwebtoken 해줘야함
+const decodedToken = jwt.verify(token, 'process.env.SECRET_KEY'); // process.env.SECRET_KEY는 .env 파일에 저장된 비밀키 가져오기 
     const userId = decodedToken.userId;
 // user.router.js 에서 검증하는 과정에 'customized_secret_key'사용했음으로 동일하게 넣어준다.
 // jwt.verify는 인증에 실패하면 err발생됨 때문에 try / catch문으로 묶어줘야한다. -> 그래야 서버가 꺼지지않고 다음에러로 넘어감
